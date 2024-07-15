@@ -12,7 +12,6 @@ const RestroCard=({resData})=>{
                 <p style={{fontSize:"16px",fontWeight:"bold"}}>{resData.info.avgRating} stars</p>
                 <p style={{fontSize:"16px",fontWeight:"bold"}}>{resData.info.description}</p>
                 <p style={{fontSize:"16px",fontWeight:"bold"}}>{resData.info.costForTwo}</p>
-
                 <p style={{fontSize:"16px",fontWeight:"bold"}}>{resData.info.sla.slaString}</p>
 
 

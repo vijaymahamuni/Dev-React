@@ -41,15 +41,6 @@
     padding: 20px;
     box-sizing: border-box;
 }
-
-.toprated-btn {
-    display: block;
-    margin: 0 auto 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
 .res-container {
     display: flex;
     flex-wrap: wrap;
@@ -65,4 +56,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-
+.filters{
+    display: flex;
+}
