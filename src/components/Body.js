@@ -27,7 +27,8 @@ const Body = () => {
 
 
     const TopRatedfunc = () => {
-        const TopRatedfilter = listofRes.filter((resData) => resData.info.avgRating > 4)
+        const TopRatedfilter = listofRes.filter((resData) => resData.info.avgRating > 4.5)
+        console.log("avgRating",TopRatedfilter)
         setFilteredRestro(TopRatedfilter)
     }
     const handleChange = (e) => {
@@ -41,7 +42,7 @@ const Body = () => {
     }
     return (
         <div className="body-container">
-            <div className="filters">
+            <div className="filters" style={{display:"flex"}}>
                 <div className="search">
                     <input
                         type="text"
@@ -50,7 +51,7 @@ const Body = () => {
                     />
                     <button onClick={filterSearch}>Search</button>
                 </div>
-                <div>
+                <div style={{marginLeft:"10px"}}>
                 <button className="toprated-btn" onClick={TopRatedfunc}>TopRated Restro</button>
 
                 </div>

@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { HEADER_IMG } from "../utils/constants";
-const Header=()=>{
-    return(
+
+const Header = () => {
+    const [btnLogin, setBtnLogin] = useState('Login')
+    return (
         <div className="header">
             <div className="logo-container">
                 <img className="logo" src={HEADER_IMG} />
-
             </div>
             <div className="nav-items">
                 <ul>
@@ -12,10 +14,11 @@ const Header=()=>{
                     <li>About Us</li>
                     <li>Contact Us</li>
                     <li>Cart</li>
+                    <button onClick={() => {
+                        btnLogin === 'Login' ? setBtnLogin('Logout'):setBtnLogin('Login')
+                    }}>{btnLogin}</button>
                 </ul>
-
             </div>
-
         </div>
     )
 }
