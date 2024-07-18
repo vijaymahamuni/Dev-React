@@ -1,6 +1,7 @@
 import RestroCard from "./RestroCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [listofRes, setListofRes] = useState([])
@@ -28,7 +29,7 @@ const Body = () => {
 
     const TopRatedfunc = () => {
         const TopRatedfilter = listofRes.filter((resData) => resData.info.avgRating > 4.5)
-        console.log("avgRating",TopRatedfilter)
+        console.log("avgRating", TopRatedfilter)
         setFilteredRestro(TopRatedfilter)
     }
     const handleChange = (e) => {
@@ -42,7 +43,7 @@ const Body = () => {
     }
     return (
         <div className="body-container">
-            <div className="filters" style={{display:"flex"}}>
+            <div className="filters" style={{ display: "flex" }}>
                 <div className="search">
                     <input
                         type="text"
@@ -51,8 +52,8 @@ const Body = () => {
                     />
                     <button onClick={filterSearch}>Search</button>
                 </div>
-                <div style={{marginLeft:"10px"}}>
-                <button className="toprated-btn" onClick={TopRatedfunc}>TopRated Restro</button>
+                <div style={{ marginLeft: "10px" }}>
+                    <button className="toprated-btn" onClick={TopRatedfunc}>TopRated Restro</button>
 
                 </div>
 
@@ -64,7 +65,14 @@ const Body = () => {
 
             <div className="res-container">
                 {filteredRestro.map((item) => (
-                    <RestroCard key={item.info.id} resData={item} />
+                    <Link
+                        key={item.info.id}
+                        to={"/restromenu/" + item.info.id}
+                        className="no-underline"
+
+                    >
+                        <RestroCard resData={item} />
+                    </Link>
                 ))}
             </div>
         </div>
