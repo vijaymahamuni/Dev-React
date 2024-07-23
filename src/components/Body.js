@@ -14,10 +14,10 @@ const Body = () => {
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9310903&lng=80.15262709999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log(json)
-        console.log("format type", json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setListofRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredRestro(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        // console.log(json)
+        // console.log("format type", json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListofRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestro(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     if (listofRes.length === 0) {
         return (
@@ -54,15 +54,8 @@ const Body = () => {
                 </div>
                 <div style={{ marginLeft: "10px" }}>
                     <button className="toprated-btn" onClick={TopRatedfunc}>TopRated Restro</button>
-
                 </div>
-
-
-
             </div>
-
-
-
             <div className="res-container">
                 {filteredRestro.map((item) => (
                     <Link

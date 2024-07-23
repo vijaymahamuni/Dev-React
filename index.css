@@ -58,4 +58,42 @@
 }
 .no-underline{
     text-decoration: none;
+    color: rgba(2, 6, 12, 0.92);
+    font-family: "Montserrat", sans-serif;
+}
+.restromenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header-menu{
+    padding: 0px 660px 18px 15px;
+    background-color: white;
+    border: 1px solid rgba(2, 6, 12, 0.15) ;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+}
+.listMenu{
+    padding: 10px;
+    list-style: none;
+    background-color: white;
+    border-bottom: .5px solid #d3d3d3;
+    margin-top: 15px;
+    border-radius: 20px;
+    box-shadow:rgba(0, 0, 0, 0.04) 0px 8px 16px 0px ;
+}
+.menucard-img{
+    height: 144px;
+    width: 156px;
+    border-radius: 12px;
+}
+.menucard-imgdiv{
+    display: flex;
+    justify-content: end;
+    margin-top: -140px;
+}
+.user-container{
+    padding: 10px;
+    border: 1px solid black;
 }
