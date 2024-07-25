@@ -31,6 +31,7 @@ import React, { Component } from 'react'
 
 class Users extends Component{
   constructor(props){
+    console.log("parent construtor");
     super(props);
     this.state ={
       count:1
@@ -43,8 +44,12 @@ ChangeColor =()=>{
   })
 }
 
-
+componentDidMount(){
+  console.log("Parent ComponentDidMount");
+}
   render(){
+    console.log("parent Render");
+
     return(
       <div>
         <h1>About as Class compoenent</h1>

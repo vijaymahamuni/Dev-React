@@ -2,6 +2,7 @@ import RestroCard from "./RestroCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [listofRes, setListofRes] = useState([])
@@ -11,6 +12,14 @@ const Body = () => {
         fetchData();
     }, [])
 
+    const onlineStatus=useOnlineStatus();
+    
+    if(onlineStatus === false)
+        return(
+            <h1>Please Check your Internet Connections</h1>
+
+        )
+    
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9310903&lng=80.15262709999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
