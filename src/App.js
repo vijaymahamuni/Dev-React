@@ -9,6 +9,7 @@ import RestroMenucard from "./components/RestroMenucard";
 import Shimmer from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 
+
 const Grocery =lazy(()=>import("./components/Grocery"));
 
 const AppLayout=()=>{
