@@ -50,6 +50,7 @@ const Body = () => {
         setFilteredRestro(filter)
 
     }
+    console.log("restro Items printed",listofRes)
     return (
         <div className="p-4">
             <div className="flex">
