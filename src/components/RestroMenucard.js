@@ -16,7 +16,7 @@ const RestroMenucard = () => {
     const Categories= resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((c) =>
         c.card?.card?.["@type"] ==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-    console.log("category",Categories)
+    // console.log("category",Categories)
 
     if (resInfo === null) {
         return (
@@ -26,7 +26,7 @@ const RestroMenucard = () => {
 
     return (
         <div className="text-center m-4">
-            <h1 className='font-bold text-xl'>{name}</h1>
+            <h1 className='font-bold text-xl '>{name}</h1>
             <div className="mt-4 font-bold">
                 <h5>{cuisines.join(', ')}  -{costForTwoMessage}</h5>
        
@@ -35,7 +35,7 @@ const RestroMenucard = () => {
             <div>
                 {Categories.map((item)=>
                 (
-                    <RestaurantCategory />
+                    <RestaurantCategory key={item?.card?.card?.id} item={item}/>
 
                 )
                 
