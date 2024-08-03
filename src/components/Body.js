@@ -38,19 +38,19 @@ const Body = () => {
 
     const TopRatedfunc = () => {
         const TopRatedfilter = listofRes.filter((resData) => resData.info.avgRating > 4.5)
-        console.log("avgRating", TopRatedfilter)
+        // console.log("avgRating", TopRatedfilter)
         setFilteredRestro(TopRatedfilter)
     }
     const handleChange = (e) => {
         setSearchRes(e.target.value)
-        console.log("search", e.target.value)
+        // console.log("search", e.target.value)
     }
     const filterSearch = () => {
         const filter = listofRes.filter(item => item.info.name.toLowerCase().includes(searchRes.toLowerCase()))
         setFilteredRestro(filter)
 
     }
-    console.log("restro Items printed",listofRes)
+    // console.log("restro Items printed",listofRes)
     return (
         <div className="p-4">
             <div className="flex">
