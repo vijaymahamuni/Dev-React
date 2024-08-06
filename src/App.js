@@ -1,6 +1,5 @@
 import React, { Suspense, lazy, useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -8,8 +7,10 @@ import { BrowserRouter, RouterProvider, createBrowserRouter, Outlet } from "reac
 import Shimmer from "./components/Shimmer";
 import RestroMenucard from "./components/RestroMenucard";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
-
+import Header from "./components/Header";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -23,6 +24,7 @@ const AppLayout = () => {
         setUserName(data.name);
     }, [])
     return (
+        <Provider store={appStore}>
         <UserContext.Provider value={{ loggedInuser: userName }}>
             <div className="App">
                 <Header />
@@ -30,6 +32,7 @@ const AppLayout = () => {
 
             </div>
         </UserContext.Provider>
+        </Provider>
     )
 }
 const appRouter = createBrowserRouter([

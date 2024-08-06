@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { HEADER_IMG } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-    const [btnLogin, setBtnLogin] = useState('Login')
+    const [btnLogin, setBtnLogin] = useState('Login');
+    //Subscribing tot the store using a useSelector
+    const cartItem=useSelector((store)=>store.cart.items);
+    console.log(cartItem)
     return (
         <div className="flex justify-between bg-green-200 items-center">
             <div className="logo-container">
@@ -26,6 +30,7 @@ const Header = () => {
                     <li className="m-2 p-2">
                         <Link to="/grocery">Grocery</Link>
                     </li>
+                    <li className="m-2 p-2 font-bold text-xl">Cart-(0)items</li>
                     <button onClick={() => {
                         btnLogin === 'Login' ? setBtnLogin('Logout') : setBtnLogin('Login')
                     }}>{btnLogin}</button>
